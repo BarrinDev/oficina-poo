@@ -15,7 +15,7 @@ SELECT o.id_os,
  ORDER BY o.data_abertura DESC;
 
 
--- C02. Serviços de uma OS, com subtotal (tela de detalhe da OS)
+-- C02. Serviços de uma OS (tela de detalhe da OS)
 -- Parâmetro: id_os  (no Java: ?)
 SELECT s.nome_servico,
        os.valor_cobrado,
@@ -43,7 +43,8 @@ SELECT o.id_os,
  ORDER BY o.data_abertura;
  
 
--- R02. Resumo por status: quantidade de OS e faturamento (opcional)
+-- R02. Resumo por status: quantidade de OS e valor total
+-- OS canceladas aparecem com total 0 (valor orçado não conta como faturamento)
 SELECT o.status_atual,
        COUNT(DISTINCT o.id_os)   AS qtd_os,
        COALESCE(SUM(CASE WHEN o.status_atual = 'cancelada' THEN 0
