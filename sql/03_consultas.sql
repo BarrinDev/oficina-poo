@@ -52,3 +52,9 @@ SELECT o.status_atual,
   FROM ordem_servico o
   LEFT JOIN os_servico os ON os.id_os = o.id_os
  GROUP BY o.status_atual;
+ 
+ 
+ -- V01-T. Teste da view: OS de outubro/2026 (esperado: OS 13, 14 e 15)
+SELECT * FROM vw_os_resumo
+ WHERE data_abertura >= '2026-10-01' AND data_abertura < '2026-11-01'
+ ORDER BY data_abertura;
