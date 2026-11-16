@@ -17,7 +17,9 @@ O repositório original do grupo é o [FelipeCMartins0/oficina-poo](https://gith
 
 ## Como rodar
 
-Precisa de Java 17 ou mais novo e MySQL 8.
+O jeito mais fácil é baixar o [oficina-apresentacao.zip](https://github.com/BarrinDev/oficina-poo/releases/latest/download/oficina-apresentacao.zip), descompactar e dar dois cliques no `1-criar-banco.bat` e depois no `2-abrir-sistema.bat`. Só precisa ter MySQL 8 e Java 11 ou mais novo, sem NetBeans.
+
+Pra rodar pelo código, precisa de Java 17 ou mais novo e MySQL 8.
 
 1. No MySQL, roda o `sql/01_ddl.sql` e depois o `sql/02_carga.sql`. O 01 apaga e recria o banco `ucb_turbo2` e cria o usuário `oficina_app` que o sistema usa. O 02 coloca os dados de exemplo. No Workbench, usa o raio (executar tudo), porque o Ctrl+Enter só roda a linha onde o cursor está.
 2. Abre a pasta `oficina` no NetBeans e roda com F6. É projeto Maven, então ele baixa o driver do MySQL sozinho.
